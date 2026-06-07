@@ -8,7 +8,8 @@
 struct Node {
     char val;
     int64_t count;
-    std::vector<Node*> branches;
+    std::vector<Node*> children;
+
     explicit Node(char v) : val(v), count(0) {}
     ~Node();
 };
@@ -16,7 +17,7 @@ struct Node {
 class PMTree {
 private:
     Node* root;
-    Node* build(char v, std::vector<char> rem);
+    Node* build(char v, std::vector<char> remaining);
 
 public:
     explicit PMTree(const std::vector<char>& in);
