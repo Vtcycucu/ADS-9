@@ -19,7 +19,8 @@ int main() {
         }
         PMTree tree(in);
         int64_t total = tree.getTotal();
-        if (total == 0) continue;
+        if (total == 0)
+            continue;
         auto start = std::chrono::steady_clock::now();
         auto all = getAllPerms(tree);
         auto end = std::chrono::steady_clock::now();
@@ -47,6 +48,5 @@ int main() {
         double avg2 = static_cast<double>(time2_sum) / K;
         std::cout << n << "\t" << std::fixed << std::setprecision(2) << time_all << "\t\t"  << avg1 << "\t\t"  << avg2 << "\n";
     }
-
     return 0;
 }
