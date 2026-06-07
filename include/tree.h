@@ -1,4 +1,4 @@
-// Copyright 2022 NNTU-CS
+// Copyright 2026 NNTU-CS
 #ifndef INCLUDE_TREE_H_
 #define INCLUDE_TREE_H_
 
@@ -15,11 +15,11 @@ struct Node {
 };
 
 class PMTree {
-private:
+ private:
     Node* root;
     Node* build(char v, std::vector<char> remaining);
 
-public:
+ public:
     explicit PMTree(const std::vector<char>& in);
     ~PMTree();
     Node* getRoot() const { return root; }
