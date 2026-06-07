@@ -1,3 +1,4 @@
+// Copyright 2026 NNTU-CS
 #include <iostream>
 #include <fstream>
 #include <locale>
@@ -60,7 +61,8 @@ PMTree::~PMTree() {
     delete root;
 }
 
-void collectDFS(Node* node, std::vector<char>& path, std::vector<std::vector<char>>& res, bool isRoot) {
+void collectDFS(Node* node, std::vector<char>& path,
+                std::vector<std::vector<char>>& res, bool isRoot) {
     if (!isRoot) {
         path.push_back(node->val);
     }
@@ -85,7 +87,8 @@ std::vector<std::vector<char>> getAllPerms(const PMTree& tree) {
     return res;
 }
 
-bool findDFS(Node* node, std::vector<char>& path, int& current_num, int target_num, bool isRoot, std::vector<char>& res) {
+bool findDFS(Node* node, std::vector<char>& path, int& current_num,
+             int target_num, bool isRoot, std::vector<char>& res) {
     if (!isRoot) {
         path.push_back(node->val);
     }
